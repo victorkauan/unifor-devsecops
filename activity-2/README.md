@@ -48,13 +48,13 @@ Checkout VAmPI → SAST (Semgrep) → Upload → DefectDojo → SCA (cdxgen) →
 
 ### SAST — Defect Dojo
 
-- **4 findings** de severidade High encontrados pelo Semgrep no código do VAmPI
+- Findings de severidade High encontrados pelo Semgrep no código do VAmPI
 - Importados automaticamente no produto `VAmPI`, engagement `VAmPI - SAST Pipeline`
 
 ### SCA — Dependency Track
 
-- **12 componentes** identificados no SBOM (Flask, SQLAlchemy, PyJWT, connexion, etc.)
-- Vulnerabilidades analisadas contra a base NVD + EPSS
+- **54 componentes** identificados no SBOM, incluindo dependências transitivas (Flask, SQLAlchemy, PyJWT, connexion, etc.)
+- Vulnerabilidades (CVEs) encontradas via análise NVD + OSS Index
 
 ---
 
