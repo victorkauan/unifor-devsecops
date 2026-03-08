@@ -1,0 +1,12 @@
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AI
+.claude
+CLAUDE.md
+GEMINI.md
+AGENTS.md

@@ -1,0 +1,1488 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Modelagem de Ameaças - Fluxo de Login em Cloud",
+    "owner": "Victor Kauan",
+    "description": "Este modelo representa o fluxo de autenticação de uma aplicação convencional hospedada em nuvem.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Victor Kauan"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": 2,
+        "title": "Fluxo de Login em Cloud",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": [
+          {
+            "position": {
+              "x": 600,
+              "y": 40
+            },
+            "size": {
+              "width": 110,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Client"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "36df7beb-805d-496f-a44c-2532200ae4b2"
+                },
+                {
+                  "group": "right",
+                  "id": "cc619c8e-8776-4f10-bd78-a4c60ab5d2ea"
+                },
+                {
+                  "group": "bottom",
+                  "id": "638fefbb-1819-450f-ae71-45bec874fd1c"
+                },
+                {
+                  "group": "left",
+                  "id": "4a710c74-b8de-42c1-b7b4-533a6808f77e"
+                }
+              ]
+            },
+            "id": "c27dc2e9-e5ce-4368-a23c-2115c43b4b71",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Client",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "11111111-0001-4000-8000-000000000001",
+                  "title": "Uso de Credenciais Vazadas (Credential Stuffing)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "O cliente pode ser um atacante utilizando listas de credenciais vazadas de outros serviços para tentar autenticar na aplicação, sem necessidade de quebrar senhas.",
+                  "mitigation": "Implementar autenticação multifator (MFA) e bloqueio temporário de conta após múltiplas tentativas de login falhas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 621.25,
+              "y": 190.0000000000001
+            },
+            "size": {
+              "width": 70,
+              "height": 70
+            },
+            "attrs": {
+              "text": {
+                "text": "Front-end"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c21e3ffb-5c21-415f-8652-8cf6db4ff918"
+                },
+                {
+                  "group": "right",
+                  "id": "5c1465cf-49f7-452b-bf94-4676fb5c5b1a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "925adc50-1f81-4d3b-89ac-59769a150ac5"
+                },
+                {
+                  "group": "left",
+                  "id": "1145387f-e7fa-4c61-b57f-b053e357523a"
+                }
+              ]
+            },
+            "id": "3d93e4b0-491a-493b-84b9-ab0a67e63727",
+            "data": {
+              "type": "tm.Process",
+              "name": "Front-end",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "11111111-0002-4000-8000-000000000002",
+                  "title": "JWT Armazenado em localStorage",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Se o front-end armazenar o JWT no localStorage, qualquer script JavaScript da página pode lê-lo, tornando-o vulnerável a ataques XSS.",
+                  "mitigation": "Armazenar o JWT em cookie com as flags HttpOnly e Secure, impedindo o acesso via JavaScript.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "informationDisclosure": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 616.25,
+              "y": 346
+            },
+            "size": {
+              "width": 80,
+              "height": 70
+            },
+            "attrs": {
+              "text": {
+                "text": "Login"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 3,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c21e3ffb-5c21-415f-8652-8cf6db4ff918"
+                },
+                {
+                  "group": "right",
+                  "id": "5c1465cf-49f7-452b-bf94-4676fb5c5b1a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "925adc50-1f81-4d3b-89ac-59769a150ac5"
+                },
+                {
+                  "group": "left",
+                  "id": "1145387f-e7fa-4c61-b57f-b053e357523a"
+                }
+              ]
+            },
+            "id": "c15bbbba-cbba-4969-bbc8-e325fe3f7dc9",
+            "data": {
+              "type": "tm.Process",
+              "name": "Login",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "11111111-0003-4000-8000-000000000003",
+                  "title": "Ataque de Força Bruta na Autenticação",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Sem limitação de tentativas, um atacante pode testar automaticamente múltiplas combinações de senha até obter acesso a uma conta válida.",
+                  "mitigation": "Implementar rate limiting por IP e bloqueio temporário de conta após N tentativas falhas consecutivas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "JWT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0008-4000-8000-000000000008",
+                  "title": "JWT Transmitido em Cookie sem Flag HttpOnly",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Se o JWT for enviado ao front-end sem a flag HttpOnly no cookie, scripts JavaScript podem lê-lo e transmiti-lo a um servidor malicioso em caso de XSS.",
+                  "mitigation": "Enviar o JWT em cookie com as flags HttpOnly e Secure habilitadas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "JWT"
+            ],
+            "id": "58cebc97-e54b-43b6-b8d7-fe1e3356f3b2",
+            "source": {
+              "cell": "c15bbbba-cbba-4969-bbc8-e325fe3f7dc9",
+              "port": "5c1465cf-49f7-452b-bf94-4676fb5c5b1a"
+            },
+            "target": {
+              "cell": "3d93e4b0-491a-493b-84b9-ab0a67e63727",
+              "port": "5c1465cf-49f7-452b-bf94-4676fb5c5b1a"
+            },
+            "vertices": [
+              {
+                "x": 730,
+                "y": 310
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "JWT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0009-4000-8000-000000000009",
+                  "title": "Reutilização de JWT (Replay Attack)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Um JWT capturado pode ser reutilizado para acessar a Context Application mesmo após o logout ou o tempo de expiração esperado do token.",
+                  "mitigation": "Definir tempo de expiração curto no JWT (exp) e implementar revogação de tokens via blacklist ou rotação de refresh token.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "JWT"
+            ],
+            "id": "d00f811d-1ffb-408c-9f73-71070f16beeb",
+            "source": {
+              "cell": "3d93e4b0-491a-493b-84b9-ab0a67e63727",
+              "port": "5c1465cf-49f7-452b-bf94-4676fb5c5b1a"
+            },
+            "target": {
+              "cell": "54219e0c-f079-4e45-bc81-d504874ff65d",
+              "port": "c240ee4a-1483-40a5-a58e-bdb603d287e0"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "JWT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0010-4000-8000-000000000010",
+                  "title": "Algoritmo JWT Alterado para alg:none",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Um atacante pode modificar o header do JWT para usar o algoritmo 'none', fazendo o back-end aceitar tokens sem verificação de assinatura caso não haja validação explícita.",
+                  "mitigation": "Rejeitar explicitamente o algoritmo 'none' e validar a assinatura utilizando apenas algoritmos permitidos como RS256.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "JWT"
+            ],
+            "id": "05851bd7-6d56-4d66-be10-425a359972c5",
+            "source": {
+              "cell": "86724f07-437f-4221-9aee-44ede7c691ec",
+              "port": "a08790e2-ec5a-4b7b-9f94-1f0d1336ce3e"
+            },
+            "target": {
+              "cell": "c15bbbba-cbba-4969-bbc8-e325fe3f7dc9",
+              "port": "925adc50-1f81-4d3b-89ac-59769a150ac5"
+            },
+            "vertices": [
+              {
+                "x": 770,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0011-4000-8000-000000000011",
+                  "title": "Senha do Usuário Registrada nos Logs",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Se o back-end logar o corpo completo da requisição de login, as senhas dos usuários podem ser gravadas em texto plano nos logs armazenados no S3.",
+                  "mitigation": "Nunca logar campos sensíveis como senha, token ou dados pessoais. Usar mascaramento em pipelines de log.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "Log"
+            ],
+            "id": "d2bc3272-24b1-4e82-89ed-998f9b508456",
+            "source": {
+              "cell": "c15bbbba-cbba-4969-bbc8-e325fe3f7dc9",
+              "port": "925adc50-1f81-4d3b-89ac-59769a150ac5"
+            },
+            "target": {
+              "cell": "dcf16a2c-b1bc-411e-9ef5-5baa08794730",
+              "port": "132a8256-3ced-4bb8-a1f9-9ed157f1515a"
+            },
+            "vertices": [
+              {
+                "x": 540,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0012-4000-8000-000000000012",
+                  "title": "Comunicação sem HTTPS Expõe Credenciais",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Se a comunicação entre o cliente e o front-end não utilizar HTTPS, as credenciais de login trafegam em texto plano e podem ser interceptadas na rede.",
+                  "mitigation": "Enforçar HTTPS com TLS 1.2+ em todos os endpoints públicos e redirecionar qualquer requisição HTTP.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "Login request"
+            ],
+            "id": "3831e348-fe44-4d12-af97-4e07613a833c",
+            "source": {
+              "cell": "c27dc2e9-e5ce-4368-a23c-2115c43b4b71",
+              "port": "638fefbb-1819-450f-ae71-45bec874fd1c"
+            },
+            "target": {
+              "cell": "3d93e4b0-491a-493b-84b9-ab0a67e63727",
+              "port": "c21e3ffb-5c21-415f-8652-8cf6db4ff918"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Auth request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0013-4000-8000-000000000013",
+                  "title": "Manipulação de Parâmetros da Requisição",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Um atacante pode interceptar e modificar os parâmetros da requisição de autenticação (ex: user, role) antes que ela chegue ao back-end.",
+                  "mitigation": "Validar e sanitizar todos os parâmetros recebidos no back-end, nunca confiando em dados enviados pelo front-end.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "Auth request"
+            ],
+            "id": "bb527541-f135-490c-8c18-7bc551b63302",
+            "source": {
+              "cell": "3d93e4b0-491a-493b-84b9-ab0a67e63727",
+              "port": "925adc50-1f81-4d3b-89ac-59769a150ac5"
+            },
+            "target": {
+              "cell": "c15bbbba-cbba-4969-bbc8-e325fe3f7dc9",
+              "port": "c21e3ffb-5c21-415f-8652-8cf6db4ff918"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User lookup",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0014-4000-8000-000000000014",
+                  "title": "SQL Injection na Consulta de Usuário",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Se a query ao banco for construída por concatenação de strings com o input do usuário, um atacante pode injetar SQL para bypassar a autenticação ou extrair dados.",
+                  "mitigation": "Utilizar queries parametrizadas ou ORM para todas as consultas ao banco de dados.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "User lookup"
+            ],
+            "id": "c6378dee-b651-4d0d-9d07-303bf6897922",
+            "source": {
+              "cell": "c15bbbba-cbba-4969-bbc8-e325fe3f7dc9",
+              "port": "925adc50-1f81-4d3b-89ac-59769a150ac5"
+            },
+            "target": {
+              "cell": "247612b0-c18c-4ece-9e22-ad4ed9cb46bc",
+              "port": "132a8256-3ced-4bb8-a1f9-9ed157f1515a"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Identity\nConfirmed",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11111111-0015-4000-8000-000000000015",
+                  "title": "Falsificação da Confirmação de Identidade",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Um atacante com acesso à rede interna pode interceptar e forjar a resposta 'Identity Confirmed' do banco de dados ao Cognito, autenticando um usuário inexistente.",
+                  "mitigation": "Garantir que a comunicação entre banco de dados e Cognito seja realizada em rede privada (VPC) com autenticação mútua.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ]
+            },
+            "labels": [
+              "Identity\nConfirmed"
+            ],
+            "id": "d60c1e24-e1bb-45a7-ab7d-ab110991afe6",
+            "source": {
+              "cell": "247612b0-c18c-4ece-9e22-ad4ed9cb46bc",
+              "port": "43cb45e4-cf35-47b9-b85f-cafa70cea251"
+            },
+            "target": {
+              "cell": "86724f07-437f-4221-9aee-44ede7c691ec",
+              "port": "c240ee4a-1483-40a5-a58e-bdb603d287e0"
+            },
+            "vertices": []
+          },
+          {
+            "position": {
+              "x": 882,
+              "y": 195.0000000000001
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Context\nApplication"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "a08790e2-ec5a-4b7b-9f94-1f0d1336ce3e"
+                },
+                {
+                  "group": "right",
+                  "id": "f90daf14-67b7-43cd-ac75-260d1785ca5e"
+                },
+                {
+                  "group": "bottom",
+                  "id": "578b3bb4-c171-4e9c-bf27-f323ee29600a"
+                },
+                {
+                  "group": "left",
+                  "id": "c240ee4a-1483-40a5-a58e-bdb603d287e0"
+                }
+              ]
+            },
+            "id": "54219e0c-f079-4e45-bc81-d504874ff65d",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Context\nApplication",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "11111111-0004-4000-8000-000000000004",
+                  "title": "JWT Aceito sem Validação de Escopo",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "A Context Application pode aceitar qualquer JWT válido sem verificar se o escopo ou as permissões do token autorizam a operação solicitada, permitindo acesso indevido a recursos.",
+                  "mitigation": "Validar o claim de escopo (scope) e roles do JWT antes de autorizar cada operação na aplicação.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "elevationOfPrivilege": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 596.25,
+              "y": 530
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Database: Users"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "132a8256-3ced-4bb8-a1f9-9ed157f1515a"
+                },
+                {
+                  "group": "right",
+                  "id": "43cb45e4-cf35-47b9-b85f-cafa70cea251"
+                },
+                {
+                  "group": "bottom",
+                  "id": "97d74d7f-5a94-48dc-85ab-2be33b9b1d85"
+                },
+                {
+                  "group": "left",
+                  "id": "e301edf3-dd92-4405-b28d-4a0e401a43d5"
+                }
+              ]
+            },
+            "id": "247612b0-c18c-4ece-9e22-ad4ed9cb46bc",
+            "zIndex": 14,
+            "data": {
+              "type": "tm.Store",
+              "name": "Database: Users",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": true,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "11111111-0005-4000-8000-000000000005",
+                  "title": "Senhas Armazenadas sem Hash",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Se as senhas forem armazenadas em texto plano no banco de dados, qualquer acesso indevido ao banco expõe todas as credenciais dos usuários.",
+                  "mitigation": "Armazenar apenas o hash das senhas utilizando bcrypt ou argon2. Nunca armazenar a senha em texto plano.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "informationDisclosure": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 368.25,
+              "y": 530
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Amazon S3"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "132a8256-3ced-4bb8-a1f9-9ed157f1515a"
+                },
+                {
+                  "group": "right",
+                  "id": "43cb45e4-cf35-47b9-b85f-cafa70cea251"
+                },
+                {
+                  "group": "bottom",
+                  "id": "97d74d7f-5a94-48dc-85ab-2be33b9b1d85"
+                },
+                {
+                  "group": "left",
+                  "id": "e301edf3-dd92-4405-b28d-4a0e401a43d5"
+                }
+              ]
+            },
+            "id": "dcf16a2c-b1bc-411e-9ef5-5baa08794730",
+            "zIndex": 15,
+            "data": {
+              "type": "tm.Store",
+              "name": "Amazon S3",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": true,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "11111111-0006-4000-8000-000000000006",
+                  "title": "Bucket de Logs com Acesso Público",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Uma configuração incorreta do bucket S3 pode tornar os logs de autenticação publicamente acessíveis, expondo IPs, nomes de usuário e padrões de acesso.",
+                  "mitigation": "Configurar o bucket como privado, habilitar criptografia server-side e revisar as ACLs e políticas de bucket regularmente.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "informationDisclosure": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 840,
+              "y": 530
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Amazon\nCognito"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "a08790e2-ec5a-4b7b-9f94-1f0d1336ce3e"
+                },
+                {
+                  "group": "right",
+                  "id": "f90daf14-67b7-43cd-ac75-260d1785ca5e"
+                },
+                {
+                  "group": "bottom",
+                  "id": "578b3bb4-c171-4e9c-bf27-f323ee29600a"
+                },
+                {
+                  "group": "left",
+                  "id": "c240ee4a-1483-40a5-a58e-bdb603d287e0"
+                }
+              ]
+            },
+            "id": "86724f07-437f-4221-9aee-44ede7c691ec",
+            "zIndex": 16,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Amazon\nCognito",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "id": "11111111-0007-4000-8000-000000000007",
+                  "title": "Falsificação do Provedor de Identidade",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Se o endpoint do Cognito não for fixado na configuração, um atacante pode redirecionar o fluxo de autenticação para um provedor de identidade falso via DNS poisoning.",
+                  "mitigation": "Fixar o endpoint do IdP na configuração da aplicação e validar o certificado TLS a cada requisição.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "diagramTop": 3,
+    "reviewer": "Victor Kauan",
+    "threatTop": 15
+  }
+}

@@ -1,0 +1,98 @@
+pipeline {
+    agent any
+
+    environment {
+        VAMPI_REPO     = 'https://github.com/erev0s/VAmPI.git'
+        DEFECTDOJO_URL = 'http://dd-nginx:8080'
+        DTRACK_URL     = 'http://dtrack-apiserver:8080'
+    }
+
+    stages {
+
+        stage('Checkout VAmPI') {
+            steps {
+                git url: "${VAMPI_REPO}", branch: 'master'
+            }
+        }
+
+        stage('SAST — Semgrep') {
+            steps {
+                // exit code 1 means findings found (not an error), so || true prevents pipeline failure
+                sh 'semgrep --config=auto --config=p/owasp-top-ten --config=p/python --config=p/flask --config=p/jwt --json -o semgrep-results.json . || true'
+                archiveArtifacts artifacts: 'semgrep-results.json'
+            }
+        }
+
+        stage('Upload SAST → Defect Dojo') {
+            steps {
+                withCredentials([string(credentialsId: 'defectdojo-api-key', variable: 'DD_API_KEY')]) {
+                    sh '''
+                        curl -s -X POST "${DEFECTDOJO_URL}/api/v2/import-scan/" \
+                            -H "Authorization: Token ${DD_API_KEY}" \
+                            -F "scan_type=Semgrep JSON Report" \
+                            -F "file=@semgrep-results.json" \
+                            -F "product_name=VAmPI" \
+                            -F "product_type_name=Research and Development" \
+                            -F "engagement_name=VAmPI - SAST Pipeline" \
+                            -F "auto_create_context=true" \
+                            -F "minimum_severity=Info"
+                    '''
+                }
+            }
+        }
+
+        stage('SCA — cdxgen') {
+            steps {
+                sh '''
+                    python3 -m venv /tmp/vampi-env
+                    /tmp/vampi-env/bin/pip install --quiet -r requirements.txt
+                    /tmp/vampi-env/bin/pip install --quiet cyclonedx-bom
+                    /tmp/vampi-env/bin/cyclonedx-py environment --of JSON -o sbom.json
+                '''
+                archiveArtifacts artifacts: 'sbom.json'
+            }
+        }
+
+        stage('Upload SCA → Dependency Track') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'dtrack-api-key', variable: 'DTRACK_API_KEY'),
+                    string(credentialsId: 'dtrack-project-uuid', variable: 'DTRACK_PROJECT')
+                ]) {
+                    sh '''
+                        BOM=$(base64 -w 0 sbom.json)
+                        printf '{"project":"%s","bom":"%s"}' "${DTRACK_PROJECT}" "${BOM}" > /tmp/bom-payload.json
+                        TOKEN=$(curl -s -X PUT "${DTRACK_URL}/api/v1/bom" \
+                            -H "X-Api-Key: ${DTRACK_API_KEY}" \
+                            -H "Content-Type: application/json" \
+                            -d @/tmp/bom-payload.json | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+                        echo "BOM upload token: ${TOKEN}"
+                        for i in $(seq 1 30); do
+                            PROCESSING=$(curl -s "${DTRACK_URL}/api/v1/event/token/${TOKEN}" \
+                                -H "X-Api-Key: ${DTRACK_API_KEY}" | grep -o '"processing":[^,}]*' | cut -d: -f2)
+                            echo "Processing: ${PROCESSING}"
+                            if [ "${PROCESSING}" = "false" ]; then
+                                echo "BOM processing complete."
+                                break
+                            fi
+                            sleep 5
+                        done
+                    '''
+                }
+            }
+        }
+
+    }
+
+    post {
+        always {
+            echo 'Pipeline finalizada.'
+        }
+        success {
+            echo 'Todos os scans concluídos com sucesso.'
+        }
+        failure {
+            echo 'Pipeline falhou. Verifique os logs acima.'
+        }
+    }
+}
