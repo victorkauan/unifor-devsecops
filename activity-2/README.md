@@ -60,6 +60,14 @@ Checkout VAmPI → SAST (Semgrep) → Upload → DefectDojo → SCA (cdxgen) →
 
 ---
 
+## Relatório de Execução
+
+O relatório completo documenta cada etapa da configuração e execução do pipeline, com prints de todas as ferramentas envolvidas.
+
+→ [**Acessar relatório de execução**](./report.md)
+
+---
+
 ## Arquivos
 
 | Arquivo | Descrição |
