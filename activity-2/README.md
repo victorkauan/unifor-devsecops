@@ -1,3 +1,5 @@
+[← Voltar ao início](../README.md)
+
 # Atividade 2 — Pipeline CI/CD com Scans de Segurança
 
 ## Descrição
@@ -66,4 +68,4 @@ Checkout VAmPI → SAST (Semgrep) → Upload → DefectDojo → SCA (cdxgen) →
 | `Jenkinsfile` | Pipeline declarativo com os 5 estágios |
 | `jenkins/Dockerfile` | Imagem customizada do Jenkins com Semgrep e cdxgen |
 | `.env.example` | Variáveis de ambiente necessárias (sem credenciais) |
-| `report.md` | Relatório de execução com evidências |
+| [`report.md`](./report.md) | Relatório de execução com evidências |
